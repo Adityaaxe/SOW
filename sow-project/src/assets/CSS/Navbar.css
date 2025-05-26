@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: transparent;
+  position: relative;
+  z-index: 100;
+}
+
+.navbar-logo {
+  width: 60px;
+  height: auto;
+  margin-right: 250px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-dropdown {
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
