@@ -6,6 +6,10 @@ const Terms = () => {
   const [termData, setTermData] = useState(null);
   const [language, setLanguage] = useState("English");
 
+  useEffect(() => {
+    fetchTerms(language);
+  }, [language]);
+
   const fetchTerms = (lang) => {
     fetch(`http://localhost:3000/terms?language=${lang}`)
       .then((res) => res.json())
@@ -20,13 +24,61 @@ const Terms = () => {
       .catch((err) => console.error("Failed to load terms:", err));
   };
 
-  useEffect(() => {
-    fetchTerms(language);
-  }, [language]);
-
   if (!termData) {
     return <div className="terms-page">Loading...</div>;
   }
+
+  // Track total number of "here" matches seen so far
+  let hereGlobalCount = 0;
+
+  const renderFormattedContent = (text) => {
+    return text.split("\n").map((line, index) => {
+      const trimmedLine = line.trim();
+
+      // First line styling
+      if (index === 0) {
+        if (language === "English" && trimmedLine.startsWith("BY ")) {
+          const rest = trimmedLine.slice(3).trim();
+          return (
+            <p key={index}>
+              <strong>BY</strong> {rest}
+            </p>
+          );
+        }
+        if (language === "Svenska" && trimmedLine.startsWith("GENOM ATT ")) {
+          const rest = trimmedLine.slice(10).trim();
+          return (
+            <p key={index}>
+              <strong>GENOM ATT</strong> {rest}
+            </p>
+          );
+        }
+      }
+
+      // Split line into words + spaces
+      const segments = trimmedLine.split(/(\s+)/); // Keeps spacing intact
+
+      const modifiedLine = segments.map((segment, i) => {
+        if (segment.toLowerCase() === "here") {
+          hereGlobalCount++;
+          if (hereGlobalCount === 4) {
+            return (
+              <a
+                key={`link-${index}-${i}`}
+                href="#"
+                style={{ color: "blue", textDecoration: "underline" }}
+              >
+                here
+              </a>
+            );
+          }
+        }
+        return <React.Fragment key={`frag-${index}-${i}`}>{segment}</React.Fragment>;
+      });
+
+      return <p key={index}>{modifiedLine}</p>;
+    });
+  };
 
   return (
     <div className="terms-page">
@@ -47,7 +99,7 @@ const Terms = () => {
       </div>
 
       <div className="terms-content">
-        <p>{termData.content}</p>
+        {renderFormattedContent(termData.content)}
       </div>
 
       <button className="back-button">{termData.button}</button>

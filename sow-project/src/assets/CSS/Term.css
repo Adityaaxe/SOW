@@ -16,47 +16,58 @@
   text-align: center;
   padding: 1rem 1rem;
   color: white;
+  max-width: 100%;
 }
 
 
 .language img {
-  width: 20px;
+  max-width: 27px;
+  height: 18px;
+  border-radius: 3px;
   margin-left: 6px;
   vertical-align: middle;
 }
 
 .back-button {
-  background-color: rgb(13, 160, 13);
+  background-color: rgb(8, 158, 30);
   color: white;
-  padding: 1rem 4rem;
   font-size: 1rem;
   border: none;
   border-radius: 25px;
   cursor: pointer;
   margin-top: 20px;
   margin-bottom: 40px;
+  cursor: pointer;
+  width: 35vw;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 40px;
+  padding-right: 40px;
+  min-width: max-content;
+  max-width: 270px;
 }
 
 .terms-content {
   background-color: white;
   margin: 2rem;
-  padding: 2rem;
   margin-top: -1rem;
   border-radius: 20px;
-  max-width: 700px;
+  max-width: 750px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5em;
+  font-size: 14px;
   line-height: 1.6;
+  font-family: "Open Sans", sans-serif !important;
   text-align: center;
+  transition: width 600ms ease-in-out;
+  padding: 40px 40px 40px 40px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: 768px) {
   .terms-content {
     margin: 1rem;
     padding: 1.5rem;
-  }
-
-  .back-button {
-    width: 100%;
   }
 }
