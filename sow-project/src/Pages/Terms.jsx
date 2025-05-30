@@ -11,7 +11,7 @@ const Terms = () => {
   }, [language]);
 
   const fetchTerms = (lang) => {
-    fetch(`http://localhost:3000/terms?language=${lang}`)
+    fetch(`https://sow-8y9z.onrender.com/terms?language=${lang}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched terms:", data);

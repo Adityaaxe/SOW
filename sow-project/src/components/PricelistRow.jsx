@@ -26,7 +26,7 @@ const PriceList = () => {
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/products")
+    axios.get("https://sow-8y9z.onrender.com/products")
       .then(response => {
         setProducts(response.data);
       })
