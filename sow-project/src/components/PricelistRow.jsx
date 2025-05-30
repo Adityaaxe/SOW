@@ -50,7 +50,7 @@ const PriceList = () => {
     const updatedData = editedRows[index];
     if (!updatedData) return;
 
-    axios.put(`http://localhost:3000/products/${updatedData.id}`, updatedData)
+    axios.put(`https://sow-8y9z.onrender.com/products/${updatedData.id}`, updatedData)
       .then(() => {
         setProducts(prev => {
           const newProducts = [...prev];
