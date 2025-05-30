@@ -61,7 +61,7 @@ const Navbar = ({ options = [], language, onLanguageChange }) => {
       <ul className="nav-links">
         {options.map((opt, index) => (
           <li key={index} className="desktop-only">
-            <a href={`/${opt.toLowerCase().replace(/\s+/g, "-")}`} className="nav-link">
+            <a href={`pricelist`} className="nav-link">
               {opt}
             </a>
           </li>
