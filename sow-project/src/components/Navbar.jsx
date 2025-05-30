@@ -101,7 +101,7 @@ const Navbar = ({ options = [], language, onLanguageChange }) => {
         {options.map((opt, index) => (
           <li key={index}>
             <a
-              href={`/${opt.toLowerCase().replace(/\s+/g, "-")}`}
+              href={`pricelist`}
               onClick={() => setShowMenu(false)}
             >
               {opt}
