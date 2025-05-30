@@ -94,7 +94,8 @@ const Terms = () => {
       </div>
 
       <div className="terms-content">
-        {renderFormattedContent(termData.content)}
+        {renderFormattedContent(termData.content1)}
+        {renderFormattedContent(termData.content2)}
       </div>
 
       <button className="back-button">{termData.button}</button>

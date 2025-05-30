@@ -1,7 +1,7 @@
 .pricelist-container {
   padding: 10px 20px !important;
   margin-left: 220px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif !important;
   background-color: #fff;
   min-height: calc(100vh - 60px);
   box-sizing: border-box;

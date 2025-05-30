@@ -1,7 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   return sequelize.define("Term", {
     language: DataTypes.STRING,
-    content: DataTypes.TEXT,
+    content1: DataTypes.TEXT,
+    content2: DataTypes.TEXT,
     button: DataTypes.STRING,
     term: DataTypes.STRING,
     opt1: DataTypes.STRING,
