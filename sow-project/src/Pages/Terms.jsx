@@ -28,6 +28,7 @@ const Terms = () => {
     return <div className="terms-page">Loading...</div>;
   }
 
+  // Used for rendering standard paragraphs
   const renderFormattedContent = (text) => {
     return text.split("\n").map((line, index) => {
       const trimmedLine = line.trim();
@@ -52,28 +53,18 @@ const Terms = () => {
         }
       }
 
-      // Split line into words + spaces
-      const segments = trimmedLine.split(/(\s+)/); // Keeps spacing intact
-
-      const modifiedLine = segments.map((segment, i) => {
-        if (segment === "{here}") {
-          console.log("Not Working");
-          return (
-            <a
-              key={`link-${index}-${i}`}
-              href="#"
-              style={{ color: "blue", textDecoration: "underline" }}
-            >
-              here
-            </a>
-          );
-        }
-        return <React.Fragment key={`frag-${index}-${i}`}>{segment}</React.Fragment>;
-      });
-
-      return <p key={index}>{modifiedLine}</p>;
+      return <p key={index}>{trimmedLine}</p>;
     });
   };
+
+  const combinedLink = (
+    <a
+      href="#"
+      style={{ color: "blue", textDecoration: "underline" }}
+    >
+      {language === "Svenska" ? "här" : "here"}
+    </a>
+  );
 
   return (
     <div className="terms-page">
@@ -94,8 +85,12 @@ const Terms = () => {
       </div>
 
       <div className="terms-content">
-        {renderFormattedContent(termData.content1)}
-        {renderFormattedContent(termData.content2)}
+        {/* Single merged paragraph with no space/line break */}
+        <p>
+          {renderFormattedContent(termData.content1)}
+          {combinedLink}
+          {renderFormattedContent(termData.content2)}
+        </p>
       </div>
 
       <button className="back-button">{termData.button}</button>
