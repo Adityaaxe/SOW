@@ -28,9 +28,6 @@ const Terms = () => {
     return <div className="terms-page">Loading...</div>;
   }
 
-  // Track total number of "here" matches seen so far
-  let hereGlobalCount = 0;
-
   const renderFormattedContent = (text) => {
     return text.split("\n").map((line, index) => {
       const trimmedLine = line.trim();
@@ -59,19 +56,17 @@ const Terms = () => {
       const segments = trimmedLine.split(/(\s+)/); // Keeps spacing intact
 
       const modifiedLine = segments.map((segment, i) => {
-        if (segment.toLowerCase() === "here") {
-          hereGlobalCount++;
-          if (hereGlobalCount === 4) {
-            return (
-              <a
-                key={`link-${index}-${i}`}
-                href="#"
-                style={{ color: "blue", textDecoration: "underline" }}
-              >
-                here
-              </a>
-            );
-          }
+        if (segment === "{here}") {
+          console.log("Not Working");
+          return (
+            <a
+              key={`link-${index}-${i}`}
+              href="#"
+              style={{ color: "blue", textDecoration: "underline" }}
+            >
+              here
+            </a>
+          );
         }
         return <React.Fragment key={`frag-${index}-${i}`}>{segment}</React.Fragment>;
       });

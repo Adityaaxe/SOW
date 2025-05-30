@@ -12,7 +12,7 @@ const Navbar = ({ options = [], language, onLanguageChange }) => {
   const menuRef = useRef(null);
   const hamburgerRef = useRef(null);
 
-  // ✅ Close mobile menu when clicking outside
+  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (

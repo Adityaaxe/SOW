@@ -1,0 +1,34 @@
+/* full height layout */
+.page-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header stays on top */
+.page-container > .header {
+  flex-shrink: 0;
+}
+
+/* Main content section: sidebar + content */
+.main-section {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar styles already in Sidebar.css */
+.main-section > .sidebar {
+  flex-shrink: 0;
+}
+
+/* PriceList will scroll if content overflows */
+.main-section > .pricelist-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+

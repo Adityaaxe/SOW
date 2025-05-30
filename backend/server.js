@@ -1,13 +1,17 @@
 const fastify = require("fastify")({ logger: true });
 const cors = require("@fastify/cors");
+require("dotenv").config(); // Load .env
 
-// ✅ Enable CORS
+// Enable CORS
 fastify.register(cors, {
-  origin: "*", // Allow all origins for development (you can restrict this in prod)
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 });
 
+// Plugins and Routes
 fastify.register(require("./plugins/sequelize"));
 fastify.register(require("./routes/terms"));
+fastify.register(require("./routes/pricelistroute"), { prefix: "/products" });
 
 // Start server
 fastify.listen({ port: 3000 }, (err, address) => {

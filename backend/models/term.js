@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define("term", {
+  return sequelize.define("Term", {
     language: DataTypes.STRING,
     content: DataTypes.TEXT,
     button: DataTypes.STRING,
@@ -11,12 +11,3 @@ module.exports = (sequelize, DataTypes) => {
     opt5: DataTypes.STRING,
   });
 };
-
-/* Hem 
-Beställ 
-Våra Kunder 
-Om oss 
-Kontakta oss 
-Svenska 
-Villkor 
-Stäng och gå tillbaka */
