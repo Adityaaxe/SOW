@@ -62,7 +62,7 @@ const Terms = () => {
       href="https://online.123fakturera.se/us/?height=768&width=1366"
       style={{ color: "rgb(0, 68, 226)", textDecoration: "none", cursor: "pointer" }}
     >
-      {language === "Svenska" ? "här" : "here"}
+      {language === "Svenska" ? "här." : "here."}
     </a>
   );
 
