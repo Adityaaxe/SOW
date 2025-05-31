@@ -4,7 +4,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 module.exports = fp(async (fastify, opts) => {
   const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: "postgres",
-    logging: false,
+    logging: console.log,
   });
 
   try {

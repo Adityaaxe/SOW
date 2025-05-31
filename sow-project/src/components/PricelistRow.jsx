@@ -162,7 +162,7 @@ const PriceList = () => {
 
               <div className="col-name">
                 <span className="bubble ps-wid" contentEditable suppressContentEditableWarning
-                  onBlur={(e) => handleFieldChange(index, "name", e.target.innerText)}>
+                  onBlur={(e) => handleFieldChange(index, "product", e.target.innerText)}>
                   {product.product}
                 </span>
               </div>
@@ -195,7 +195,7 @@ const PriceList = () => {
               {showStock && (
                 <div className="col-stock">
                   <span className="bubble" contentEditable suppressContentEditableWarning
-                    onBlur={(e) => handleFieldChange(index, "stock", e.target.innerText)}>
+                    onBlur={(e) => handleFieldChange(index, "inStock", e.target.innerText)}>
                     {product.inStock}
                   </span>
                 </div>
