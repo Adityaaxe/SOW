@@ -105,7 +105,7 @@ const Terms = () => {
       </div>
 
 
-      <button className="back-button">{termData.button}</button>
+      <button className="botm">{termData.button}</button>
     </div>
   );
 };

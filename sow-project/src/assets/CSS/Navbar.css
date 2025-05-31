@@ -119,7 +119,6 @@
   left: 30px;
   background: white;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  padding: 0rem 1.5rem;
   z-index: 999;
 
   overflow: hidden;
@@ -129,16 +128,20 @@
 
 /* Visible state */
 .mobile-menu.show {
-  max-height: 500px; /* large enough to fit full menu */
+  max-height: 500px; 
 }
 .mobile-menu li {
   list-style: none;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
   font-weight: 600;
   color: black;
+}
+
+.mobile-menu li:hover{
+  background-color: rgb(162, 201, 219);
 }
 
 .mobile-menu li a {
@@ -158,6 +161,43 @@
   }
 
   .hamburger {
-    display: flex;
+    display: flex !important;
+  }
+
+  .navbar{
+    width: 1190px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 675px) {
+  .language-selector {
+    font-size: 15px;
+  }
+  .navbar{
+    width: 600px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .mobile-menu li a {
+  font-size: 14px;
+  margin-right: 42px;
+  }
+  .mobile-menu li {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 2.5rem;
+  }
+
+  .language-selector {
+    font-size: 15px;
+  }
+
+  .navbar{
+    width: 520px;
+    margin-top: 15px;
   }
 }

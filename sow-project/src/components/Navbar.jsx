@@ -69,7 +69,7 @@ const Navbar = ({ options = [], language, onLanguageChange }) => {
 
         <li
           className="language"
-          onMouseEnter={() => setShowDropdown(true)}
+          onClick={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
         >
           <div className="language-selector">
