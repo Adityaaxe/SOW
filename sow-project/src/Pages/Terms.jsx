@@ -81,7 +81,7 @@ const Terms = () => {
           onLanguageChange={setLanguage}
         />
         <h2 className="term">{termData.term}</h2>
-        <button className="back-button">{termData.button}</button>
+        <button className="back-button" onClick={() => window.location.href = 'https://google.com'}>{termData.button}</button>
       </div>
 
       <div className="terms-content">
@@ -105,7 +105,7 @@ const Terms = () => {
       </div>
 
 
-      <button className="botm">{termData.button}</button>
+      <button className="botm" onClick={() => window.location.href = 'https://google.com'}>{termData.button}</button>
     </div>
   );
 };
