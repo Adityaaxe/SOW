@@ -12,6 +12,14 @@ const Navbar = ({ options = [], language, onLanguageChange }) => {
   const menuRef = useRef(null);
   const hamburgerRef = useRef(null);
 
+  const navOptions = [
+      { label: "Home", href: "https://www.123fakturera.se/index.html" },
+      { label: "Order", href: "https://www.123fakturera.se/bestall.html" },
+      { label: "Our Customers", href: "https://www.123fakturera.se/kunder.html" },
+      { label: "About us", href: "https://www.123fakturera.se/omoss.html" },
+      { label: "Contact Us", href: "https://www.123fakturera.se/kontaktaoss.html" }
+    ];
+
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -59,10 +67,10 @@ const Navbar = ({ options = [], language, onLanguageChange }) => {
 
       {/* Desktop Nav */}
       <ul className="nav-links">
-        {options.map((opt, index) => (
+        {navOptions.map((opt, index) => (
           <li key={index} className="desktop-only">
-            <a href={`pricelist`} className="nav-link">
-              {opt}
+            <a href={opt.href} className="nav-link">
+              {opt.label}
             </a>
           </li>
         ))}

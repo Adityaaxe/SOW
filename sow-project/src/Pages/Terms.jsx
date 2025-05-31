@@ -25,7 +25,11 @@ const Terms = () => {
   };
 
   if (!termData) {
-    return <div className="terms-page">Loading...</div>;
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
   }
 
   // Used for rendering standard paragraphs
