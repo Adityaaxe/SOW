@@ -59,8 +59,8 @@ const Terms = () => {
 
   const combinedLink = (
     <a
-      href="#"
-      style={{ color: "blue", textDecoration: "underline" }}
+      href="https://online.123fakturera.se/us/?height=768&width=1366"
+      style={{ color: "rgb(0, 68, 226)", textDecoration: "none", cursor: "pointer" }}
     >
       {language === "Svenska" ? "här" : "here"}
     </a>
@@ -80,18 +80,30 @@ const Terms = () => {
           language={language}
           onLanguageChange={setLanguage}
         />
-        <h2>{termData.term}</h2>
+        <h2 className="term">{termData.term}</h2>
         <button className="back-button">{termData.button}</button>
       </div>
 
       <div className="terms-content">
-        {/* Single merged paragraph with no space/line break */}
+        {renderFormattedContent(termData.content1).slice(0, -1)}
+
+        {/* Single paragraph with link and start of content2 */}
         <p>
-          {renderFormattedContent(termData.content1)}
-          {combinedLink}
-          {renderFormattedContent(termData.content2)}
+          {
+            renderFormattedContent(termData.content1).slice(-1)[0].props.children
+          }{" "}
+          {combinedLink}{" "}
+          {
+            renderFormattedContent(termData.content2)[0].props.children
+          }
         </p>
+
+        {/* Render the rest of content2 normally */}
+        {
+          renderFormattedContent(termData.content2).slice(1)
+        }
       </div>
+
 
       <button className="back-button">{termData.button}</button>
     </div>
