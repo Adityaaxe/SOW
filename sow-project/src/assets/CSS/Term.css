@@ -31,7 +31,8 @@
 .back-button {
   background-color: rgb(8, 158, 30);
   color: white;
-  font-size: 1rem;
+  font-size: 15px;
+  font-weight: 500;
   border: none;
   border-radius: 50px;
   margin-top: 20px;
@@ -51,11 +52,11 @@
   margin: 2.3rem;
   margin-top: -1rem;
   border-radius: 20px;
-  max-width: 840px;
+  max-width: 750px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   font-weight: 500;
   line-height: 1.6em;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Open Sans", sans-serif !important;
   text-align: center;
   transition: width 600ms ease-in-out;
@@ -64,7 +65,7 @@
 }
 
 .term{
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .botm{
