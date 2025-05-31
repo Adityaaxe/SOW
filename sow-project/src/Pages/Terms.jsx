@@ -6,6 +6,18 @@ const Terms = () => {
   const [termData, setTermData] = useState(null);
   const [language, setLanguage] = useState("English");
 
+  // Fix mobile white space issue by setting --vh to actual window height
+  useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
+
   useEffect(() => {
     fetchTerms(language);
   }, [language]);
@@ -32,7 +44,6 @@ const Terms = () => {
     );
   }
 
-  // Used for rendering standard paragraphs
   const renderFormattedContent = (text) => {
     return text.split("\n").map((line, index) => {
       const trimmedLine = line.trim();
@@ -64,7 +75,11 @@ const Terms = () => {
   const combinedLink = (
     <a
       href="https://online.123fakturera.se/us/?height=768&width=1366"
-      style={{ color: "rgb(0, 68, 226)", textDecoration: "none", cursor: "pointer" }}
+      style={{
+        color: "rgb(0, 68, 226)",
+        textDecoration: "none",
+        cursor: "pointer"
+      }}
     >
       {language === "Svenska" ? "här." : "here."}
     </a>
@@ -85,13 +100,14 @@ const Terms = () => {
           onLanguageChange={setLanguage}
         />
         <h2 className="term">{termData.term}</h2>
-        <button className="back-button" onClick={() => window.location.href = 'https://google.com'}>{termData.button}</button>
+        <button className="back-button" onClick={() => window.location.href = 'https://google.com'}>
+          {termData.button}
+        </button>
       </div>
 
       <div className="terms-content">
         {renderFormattedContent(termData.content1).slice(0, -1)}
 
-        {/* Single paragraph with link and start of content2 */}
         <p>
           {
             renderFormattedContent(termData.content1).slice(-1)[0].props.children
@@ -102,14 +118,12 @@ const Terms = () => {
           }
         </p>
 
-        {/* Render the rest of content2 normally */}
-        {
-          renderFormattedContent(termData.content2).slice(1)
-        }
+        {renderFormattedContent(termData.content2).slice(1)}
       </div>
 
-
-      <button className="botm" onClick={() => window.location.href = 'https://google.com'}>{termData.button}</button>
+      <button className="botm" onClick={() => window.location.href = 'https://google.com'}>
+        {termData.button}
+      </button>
     </div>
   );
 };
