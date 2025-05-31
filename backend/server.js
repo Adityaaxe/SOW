@@ -4,7 +4,7 @@ require("dotenv").config(); // Load .env
 
 // Enable CORS
 fastify.register(cors, {
-  origin: ['http://localhost:5173', 'https://sow-flax.vercel.app/'],
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 });
 
