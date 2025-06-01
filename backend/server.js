@@ -1,10 +1,10 @@
 const fastify = require("fastify")({ logger: true });
 const cors = require("@fastify/cors");
-require("dotenv").config(); // Load .env
+require("dotenv").config();
 
 // Enable CORS
 fastify.register(cors, {
-  origin: "*",
+  origin: "*", // For development only
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 });
 

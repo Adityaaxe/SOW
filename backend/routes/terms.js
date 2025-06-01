@@ -1,4 +1,3 @@
-// routes/terms.js
 const termsController = async (fastify, options) => {
   fastify.get("/terms", async (request, reply) => {
     const { language } = request.query;

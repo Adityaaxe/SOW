@@ -106,13 +106,10 @@ const Navbar = ({ options = [], language, onLanguageChange }) => {
 
       {/* Mobile Dropdown Menu */}
       <ul className={`mobile-menu ${showMenu ? "show" : ""}`} ref={menuRef}>
-        {options.map((opt, index) => (
+        {navOptions.map((opt, index) => (
           <li key={index}>
-            <a
-              href={`pricelist`}
-              onClick={() => setShowMenu(false)}
-            >
-              {opt}
+            <a href={opt.href}>
+              {opt.label}
             </a>
           </li>
         ))}

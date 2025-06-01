@@ -1,31 +1,32 @@
-.terms-page {
-  position: relative;
-  min-height: calc(var(--vh, 1vh) * 100);
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  z-index: 0;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   overflow-x: hidden;
 }
 
-
-.terms-page::before {
+body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background-image: url("https://storage.123fakturera.se/public/wallpapers/sverige43.jpg");
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
   z-index: -1;
   pointer-events: none;
 }
 
+.terms-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
 
 .terms-header {
   text-align: center;
