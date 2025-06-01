@@ -5,26 +5,28 @@ html, body {
   overflow-x: hidden;
 }
 
-body::before {
+/* Make a full-page background using a pseudo element */
+.terms-page::before {
   content: "";
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  height: 100dvh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-image: url("https://storage.123fakturera.se/public/wallpapers/sverige43.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1;
-  pointer-events: none;
+  opacity: 1;
 }
 
+/* Main page wrapper */
 .terms-page {
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
   background-color: transparent;
 }
 
